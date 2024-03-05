@@ -10,4 +10,4 @@ This is ZenTrades Campus Hiring Assignment for Technical Associate Task 2
 
 ## Technologies Used
 
-React.js, Vite, Tailwind CSS
+React.js, Vite, Tailwind CSS, TypeScript, React Router, Material UI (Charts)
