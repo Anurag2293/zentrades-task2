@@ -46,7 +46,7 @@ const Login = () => {
     }
 
     return (
-        <div className='bg-black w-screen min-h-screen'>
+        <div className='w-screen min-h-screen bg-[url("/background-image.png")]'>
             <form
                 className='h-screen flex flex-col justify-center items-center w-96 mx-auto'
                 onSubmit={handleOnSubmit}
@@ -57,7 +57,10 @@ const Login = () => {
                         type="text"
                         placeholder="E-mail address"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => {
+                            setEmail(e.target.value)
+                            setError('')
+                        }}
                         className='w-full rounded-t-lg p-4 active:border-primary'
                     />
                     <input
@@ -66,7 +69,10 @@ const Login = () => {
                         id="password"
                         placeholder="Password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => {
+                            setPassword(e.target.value)
+                            setError('')
+                        }}
                         className='w-full rounded-b-lg p-4'
                     />
                 </div>
@@ -89,9 +95,7 @@ const Login = () => {
                     target='_blank'
                     className='text-white text-sm'
                 >Forgot your Password?</a>
-                {error.length > 0 &&
-                    <p className='text-red-500'>Error: {error}</p>
-                }
+                <p className={`text-red-500 border-2 rounded border-red-500 p-4 mt-4 ${error.length===0 && 'invisible'}`}>Error: {error}</p>
             </form>
         </div>
     )
